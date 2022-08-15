@@ -1,0 +1,8 @@
+export { default as About } from './About.vue'
+export { default as Contact } from './Contact.vue'
+export { default as Footer } from './Footer.vue'
+export { default as Header } from './Header.vue'
+export { default as HeroImage } from './HeroImage.vue'
+export { default as Modal } from './Modal.vue'
+export { default as Music } from './Music.vue'
+export { default as Shows } from './Shows.vue'

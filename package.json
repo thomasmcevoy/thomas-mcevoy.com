@@ -1,0 +1,39 @@
+{
+  "name": "thomas-mcevoy.com",
+  "version": "1.0.0",
+  "description": "Thomas McEvoy | Pianist, composer, educator",
+  "author": "Thomas McEvoy",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "prod": "pm2 start npm --name 'thomas-mcevoy.com' -- start"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
+    "cross-env": "^5.2.1",
+    "nuxt": "^2.12.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^0.0.1",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "nodemon": "^1.19.4",
+    "prettier": "1.14.3"
+  }
+}

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo ""
+echo "--------------------------------------------------------------------------------"
+echo "Deploying thomas-mcevoy.com with the following commit message:"
+echo "'$1'"
+echo "--------------------------------------------------------------------------------"
+
+npm run build
+
+git add .
+git commit -m "$1"
+git push
+
+ssh thomas@104.236.66.208 "/usr/bin/pm2 restart thomas-mcevoy.com"
