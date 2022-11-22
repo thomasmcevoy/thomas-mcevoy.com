@@ -12,4 +12,4 @@ git add .
 git commit -m "$1"
 git push
 
-ssh thomas@104.236.66.208 "/usr/bin/pm2 restart thomas-mcevoy.com"
+ssh tom@68.183.30.7 "/usr/bin/pm2 restart thomas-mcevoy.com"
