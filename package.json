@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "prod": "pm2 start npm --name 'thomas-mcevoy.com' -- --port 3000 -- start"
+    "prod": "pm2 start npm --name 'thomas-mcevoy.com' -- --port 3000"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.7",
