@@ -5,9 +5,13 @@
       <h4>{{ month }} {{ year }}</h4>
       <ol>
         <li v-for="show in shows" :key="show.day" class="show">
-          <div class="day">{{ show.day }}</div>
+          <div class="day">
+            {{ show.day }}
+          </div>
           <div class="details">
-            <div v-if="!show.url" class="venue">{{ show.venue.toUpperCase() }}</div>
+            <div v-if="!show.url" class="venue">
+              {{ show.venue.toUpperCase() }}
+            </div>
             <a v-else :href="show.url" class="venue">{{ show.venue.toUpperCase() }}</a>
             <div>{{ show.band.toUpperCase() }}</div>
             <div>{{ show.time.toUpperCase() }}</div>
@@ -23,85 +27,148 @@ export default {
   name: 'Shows',
   data() {
     return {
-      month: 'February',
-      year: '2020',
+      month: 'September',
+      year: '2023',
       shows: [
         {
           day: 2,
-          venue: 'Robert',
-          url: '//robertnyc.com',
-          band: 'Duo w/Paul Sikivie',
-          time: '12–3 PM'
+          venue: 'The Wallace',
+          url: '//thewallace.com/lounge',
+          band: 'Steve Picataggio Trio',
+          time: '7–11 PM'
         },
         {
           day: 3,
+          venue: 'Church of the Ascension',
+          url: '//ascensionchurchnyc.org',
+          band: 'Jazz Vespers',
+          time: '6–7 PM'
+        },
+        {
+          day: 4,
           venue: 'Sleep No More',
           url: '//mckittrickhotel.com',
           band: 'Manderley Bar House Band',
-          time: '8:30–10:30 PM'
+          time: '9:00–10:30 PM'
         },
         {
           day: 6,
-          venue: 'Private Event',
-          url: '',
-          band: 'Solo Piano',
-          time: '6:00–8:00 PM'
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:00–10:30 PM'
+        },
+        {
+          day: 7,
+          venue: 'The Wallace',
+          url: '//thewallace.com/lounge',
+          band: 'Duo with Jane Irving',
+          time: '7–10 PM'
+        },
+        {
+          day: 8,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:30–11:00 PM'
+        },
+        {
+          day: 9,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '10:00–11:30 PM'
         },
         {
           day: 10,
-          venue: 'Little Branch',
-          url: '//yelp.com/biz/little-branch-new-york',
-          band: 'Ben Cliness Trio',
-          time: '10:30 PM–1:00 AM'
+          venue: 'Church of the Ascension',
+          url: '//ascensionchurchnyc.org',
+          band: 'Jazz Vespers',
+          time: '6–7 PM'
         },
         {
-          day: 12,
+          day: 11,
           venue: 'Sleep No More',
           url: '//mckittrickhotel.com',
           band: 'Manderley Bar House Band',
-          time: '8:30–10:30 PM'
+          time: '9:00–10:30 PM'
         },
         {
-          day: 14,
+          day: 13,
           venue: 'Sleep No More',
           url: '//mckittrickhotel.com',
           band: 'Manderley Bar House Band',
-          time: '8:30–10:30 PM'
+          time: '9:00–10:30 PM'
+        },
+        {
+          day: 15,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:30–11:00 PM'
         },
         {
           day: 16,
-          venue: 'Robert',
-          url: '//robertnyc.com',
-          band: 'Duo w/Paul Gill',
-          time: '12–3 PM'
+          venue: 'The Lotos Club',
+          url: '//lotosclub.org',
+          band: 'Private Event',
+          time: '6:30–10:30 PM'
+        },
+        {
+          day: 17,
+          venue: 'Church of the Ascension',
+          url: '//ascensionchurchnyc.org',
+          band: 'Jazz Vespers',
+          time: '6–7 PM'
+        },
+        {
+          day: 20,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:00–10:30 PM'
         },
         {
           day: 21,
           venue: 'Sleep No More',
           url: '//mckittrickhotel.com',
           band: 'Manderley Bar House Band',
-          time: '8:30–10:30 PM'
+          time: '9:00–10:30 PM'
         },
         {
-          day: 23,
-          venue: 'Robert',
-          url: '//robertnyc.com',
-          band: 'Duo w/Neal Miner',
-          time: '12–3 PM'
+          day: 22,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:30–11:00 PM'
+        },
+        {
+          day: 24,
+          venue: 'Church of the Ascension',
+          url: '//ascensionchurchnyc.org',
+          band: 'Jazz Vespers',
+          time: '6–7 PM'
+        },
+        {
+          day: 25,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:00–10:30 PM'
+        },
+        {
+          day: 27,
+          venue: 'Sleep No More',
+          url: '//mckittrickhotel.com',
+          band: 'Manderley Bar House Band',
+          time: '9:00–10:30 PM'
         },
         {
           day: 28,
           venue: 'Sleep No More',
           url: '//mckittrickhotel.com',
           band: 'Manderley Bar House Band',
-          time: '9–11 PM'
-        },
-        {
-          day: '',
-          venue: '',
-          url: '',
-          band: '',
-          time: ''
+          time: '9:00–10:30 PM'
         },
         {
           day: '',
