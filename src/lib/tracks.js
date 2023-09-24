@@ -1,41 +1,48 @@
+import iila from '../assets/If I Love Again.mp3';
+import inemm from '../assets/It Never Entered My Mind.mp3';
+import attya from '../assets/All the Things You Are.mp3';
+import m from '../assets/Mandjet.mp3';
+import bhbg from '../assets/Black Hat.mp3';
+import af from '../assets/April Fool.mp3';
+
 export default [
 	{
-		src: '//thomas-mcevoy.com/If I Love Again.mp3',
+		src: {iila},
 		title: 'If I Love Again',
 		album: 'Standards',
 		number: 0
 	},
 
 	{
-		src: '//thomas-mcevoy.com/It Never Entered My Mind.mp3',
+		src: {inemm},
 		title: 'It Never Entered My Mind',
 		album: 'Standards',
 		number: 1
 	},
 
 	{
-		src: '//thomas-mcevoy.com/All the Things You Are.mp3',
+		src: {attya},
 		title: 'All the Things You Are',
 		album: 'Standards',
 		number: 2
 	},
 
   {
-		src: '//thomas-mcevoy.com/Mandjet.mp3',
+		src: {m},
 		title: 'Mandjet',
 		album: 'Compositions',
 		number: 3
 	},
 
   {
-		src: '//thomas-mcevoy.com/Black Hat.mp3',
+		src: {bhbg},
 		title: 'Black Hat, Black Gloves',
 		album: 'Compositions',
 		number: 4
 	},
 
 	{
-		src: '//thomas-mcevoy.com/April Fool.mp3',
+		src: {af},
 		title: 'April Fool',
 		album: 'Compositions',
 		number: 5
