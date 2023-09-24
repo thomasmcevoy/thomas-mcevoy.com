@@ -12,4 +12,6 @@ git add .
 git commit -m "$1"
 git push
 
-ssh tom@68.183.30.7 "pm2 restart thomas-mcevoy.com"
+npm run build && npm run deploy
+
+# ssh tom@68.183.30.7 "cd thomas-mcevoy.com && git pull"
