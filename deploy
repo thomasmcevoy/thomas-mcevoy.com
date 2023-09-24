@@ -12,5 +12,4 @@ git add .
 git commit -m "$1"
 git push
 
-scp -r ./dist tom@68.183.30.7:~/thomas-mcevoy.com/.
-#ssh tom@68.183.30.7 "pm2 restart thomas-mcevoy.com"
+ssh tom@68.183.30.7 "pm2 restart thomas-mcevoy.com"
