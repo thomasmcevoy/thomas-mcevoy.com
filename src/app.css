@@ -144,15 +144,15 @@ h4 {
 
 @font-face {
   font-family: 'Futura Standard';
-  src: url('futura-standard.ttf') format('ttf');
+  src: url('/fonts/futura-standard.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Futura Light';
-  src: url('futura-light.woff2') format('woff2');
+  src: url('/fonts/futura-light.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Futura Book';
-  src: url('futura-book.woff2') format('woff2');
+  src: url('/fonts/futura-book.woff2') format('woff2');
 }
