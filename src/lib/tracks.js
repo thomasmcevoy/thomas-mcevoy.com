@@ -1,48 +1,41 @@
-import iila from '../assets/If I Love Again.mp3';
-import inemm from '../assets/It Never Entered My Mind.mp3';
-import attya from '../assets/All the Things You Are.mp3';
-import m from '../assets/Mandjet.mp3';
-import bhbg from '../assets/Black Hat.mp3';
-import af from '../assets/April Fool.mp3';
-
 export default [
 	{
-		src: { iila },
+		src: '/assets/If I Love Again.mp3',
 		title: 'If I Love Again',
 		album: 'Standards',
 		number: 0
 	},
 
 	{
-		src: { inemm },
+		src: '/assets/It Never Entered My Mind.mp3',
 		title: 'It Never Entered My Mind',
 		album: 'Standards',
 		number: 1
 	},
 
 	{
-		src: { attya },
+		src: '/assets/All the Things You Are.mp3',
 		title: 'All the Things You Are',
 		album: 'Standards',
 		number: 2
 	},
 
 	{
-		src: { m },
+		src: '/assets/Mandjet.mp3',
 		title: 'Mandjet',
 		album: 'Compositions',
 		number: 3
 	},
 
 	{
-		src: { bhbg },
+		src: '/assets/Black Hat.mp3',
 		title: 'Black Hat, Black Gloves',
 		album: 'Compositions',
 		number: 4
 	},
 
 	{
-		src: { af },
+		src: '/assets/April Fool.mp3',
 		title: 'April Fool',
 		album: 'Compositions',
 		number: 5

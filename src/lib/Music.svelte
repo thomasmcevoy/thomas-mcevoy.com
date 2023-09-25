@@ -17,7 +17,6 @@
   }
 
   export function play(track) {
-    console.log(track);
     if (pristine) pristine = false;
     if (paused === false) paused = true;
     if (track !== undefined) {
