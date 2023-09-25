@@ -65,7 +65,7 @@
       {/each}
     </div>
     <div id="controls">
-      <div
+      <button
         id="previous"
         class="controls__button controls__button--small"
         on:click={() => previous()}
@@ -78,9 +78,9 @@
             d="M108.418 66l99 61V5zM4 66l99.293 61V5zM108.418 66l99 61V5z"
           />
         </svg>
-      </div>
+      </button>
       {#if paused}
-        <div
+        <button
           id="play"
           class="controls__button controls__button--large"
           on:click={() => play()}
@@ -93,9 +93,9 @@
               d="M1.25 2.255V129.37l101.858-63.49z"
             />
           </svg>
-        </div>
+        </button>
       {:else}
-        <div
+        <button
           id="pause"
           class="controls__button controls__button--large"
           on:click={() => (paused = !paused)}
@@ -108,9 +108,9 @@
               d="M13.25 1.25h23.652V131.46H13.25zM68.132 1.25h23.652V131.46H68.132z"
             />
           </svg>
-        </div>
+        </button>
       {/if}
-      <div
+      <button
         id="next"
         class="controls__button controls__button--small"
         on:click={() => next()}
@@ -123,7 +123,7 @@
             d="M4 5v122l99-61zM108.125 5v122l99.292-61zM4 5v122l99-61z"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div id="progress">
       <div id="current-time">{pristine ? "" : format(currentTime)}</div>
@@ -213,6 +213,14 @@
     #controls {
       margin: 2.75em 0 1.875em;
     }
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    background-color: #414042;
+    border: none;
   }
 
   .controls__button {
