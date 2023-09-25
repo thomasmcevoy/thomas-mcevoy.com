@@ -14,5 +14,5 @@ git push
 
 ssh tom@68.183.30.7 "cd thomas-mcevoy.com &&
 git pull &&
-rm -rf /var/www/html/*
-cp ./* /var/www/html/"
+sudo rm -rf /var/www/html/* &&
+sudo cp ./dist/* /var/www/html/"
