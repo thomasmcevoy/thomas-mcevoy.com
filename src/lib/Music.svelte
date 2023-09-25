@@ -7,7 +7,6 @@
   export let duration = 0;
   export let paused = true;
   export let pristine = true;
-  export let src = tracks[0].src;
 
   function format(time) {
     if (isNaN(time)) return "...";
@@ -18,11 +17,8 @@
 
   export function play(track) {
     if (pristine) pristine = false;
-    if (paused === false) paused = true;
-    if (track !== undefined) {
-      currentTrack = track;
-      src = tracks[track].src;
-    }
+    if (!paused) paused = true;
+    if (track !== undefined) currentTrack = track;
     setTimeout(() => (paused = false), 0);
   }
 
@@ -39,11 +35,11 @@
   <h2>MUSIC</h2>
   <div id="player" class:paused>
     <audio
-      {src}
-      bind:currentTime
-      bind:duration
       bind:paused
+      bind:duration
+      bind:currentTime
       preload="metadata"
+      src={tracks[currentTrack].src}
       on:ended={() => next()}
     />
     <div id="playlist">
@@ -52,12 +48,13 @@
           <h3>{album.toUpperCase()}</h3>
           {#each tracks as track}
             {#if track.album === album}
-              <a
-                class="song"
-                class:song--current={!pristine && track.number === currentTrack}
+              <button
+                class="track"
+                class:current={track.number === currentTrack && !pristine}
                 on:click={() => play(track.number)}
-                >{track.title.toUpperCase()}</a
               >
+                {track.title.toUpperCase()}
+              </button><span class="spacer">/</span>
             {/if}
           {/each}
         </div>
@@ -169,39 +166,43 @@
     font-size: inherit;
   }
 
-  .song {
+  .track {
     display: block;
     letter-spacing: 0.1875em;
     color: #d9d9d9;
     padding: 0.25em;
   }
+  .spacer {
+    display: none;
+  }
   @media (min-width: 750px) {
-    .song {
+    .track {
       padding: 0.375em;
     }
   }
 
   @media (min-width: 1000px) {
-    .song {
+    .track {
       display: inline-block;
       padding: 0.375em 0.125em 0.375em 0;
     }
-    .song:before {
-      content: " / ";
+    .spacer {
+      display: inline-block;
       color: #bf9600;
+      padding: 0.375em 0.5em 0.375em 0.375em;
     }
-    .song:first-of-type:before {
-      content: "";
+    .spacer:last-of-type {
+      display: none;
     }
   }
 
-  .song:hover {
+  .track:hover {
     color: #fff;
     cursor: pointer;
   }
 
-  .song--current,
-  .song--current:hover {
+  .track.current,
+  .track.current:hover {
     color: #808184;
   }
 
