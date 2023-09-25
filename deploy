@@ -12,7 +12,7 @@ git add .
 git commit -m "$1"
 git push
 
-ssh tom@68.183.30.7 "cd thomas-mcevoy.com &&
+ssh -S tom@68.183.30.7 "cd thomas-mcevoy.com &&
 git pull &&
 sudo rm -rf /var/www/html/* &&
 sudo cp ./dist/* /var/www/html/"

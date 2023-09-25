@@ -1,9 +1,9 @@
-import iila from '/assets/If I Love Again.mp3';
-import inemm from '/assets/It Never Entered My Mind.mp3';
-import attya from '/assets/All the Things You Are.mp3';
-import m from '/assets/Mandjet.mp3';
-import bhbg from '/assets/Black Hat.mp3';
-import af from '/assets/April Fool.mp3';
+import iila from '../assets/If I Love Again.mp3';
+import inemm from '../assets/It Never Entered My Mind.mp3';
+import attya from '../assets/All the Things You Are.mp3';
+import m from '../assets/Mandjet.mp3';
+import bhbg from '../assets/Black Hat.mp3';
+import af from '../assets/April Fool.mp3';
 
 export default [
 	{
