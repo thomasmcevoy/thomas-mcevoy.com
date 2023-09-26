@@ -36,10 +36,6 @@
     text-align: center;
   }
 
-  #shows h3 {
-    color: #bf9600;
-  }
-
   #shows h4 {
     margin: 0 0 0.875em;
   }
