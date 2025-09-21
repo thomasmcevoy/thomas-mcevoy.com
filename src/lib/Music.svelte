@@ -46,17 +46,19 @@
       {#each albums as album}
         <div class="album">
           <h3>{album.toUpperCase()}</h3>
-          {#each tracks as track}
-            {#if track.album === album}
-              <button
-                class="track"
-                class:current={track.number === currentTrack && !pristine}
-                on:click={() => play(track.number)}
-              >
-                {track.title.toUpperCase()}
-              </button><span class="spacer">/</span>
-            {/if}
-          {/each}
+          <div id="tracks-container">
+            {#each tracks as track}
+              {#if track.album === album}
+                <button
+                  class="track"
+                  class:current={track.number === currentTrack && !pristine}
+                  on:click={() => play(track.number)}
+                >
+                  {track.title.toUpperCase()}
+                </button><span class="spacer">/</span>
+              {/if}
+            {/each}
+          </div>
         </div>
       {/each}
     </div>
@@ -164,6 +166,14 @@
     margin-bottom: 0.875em;
     color: #bf9600;
     font-size: inherit;
+  }
+
+   @media (max-width: 999px) {
+    #tracks-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .track {
