@@ -6,28 +6,30 @@
   <h2>SHOWS</h2>
   <div id="calendar">
     <h4>{calendar.month} {calendar.year}</h4>
-    <ol>
-      {#each calendar.shows as show}
-        <li class="show">
-          <div class="day">
-            {show.day}
-          </div>
-          <div class="details">
-            {#if !show.url}
-              <div class="venue">
-                {show.venue.toUpperCase()}
-              </div>
-            {:else}
-              <a href={show.url} class="venue">
-                {show.venue.toUpperCase()}
-              </a>
-            {/if}
-            <div>{show.band.toUpperCase()}</div>
-            <div>{show.time.toUpperCase()}</div>
-          </div>
-        </li>
-      {/each}
-    </ol>
+    <div class="container">
+      <ol>
+        {#each calendar.shows as show}
+          <li class="show">
+            <div class="day">
+              {show.day}
+            </div>
+            <div class="details">
+              {#if !show.url}
+                <div class="venue">
+                  {show.venue.toUpperCase()}
+                </div>
+              {:else}
+                <a href={show.url} class="venue">
+                  {show.venue.toUpperCase()}
+                </a>
+              {/if}
+              <div>{show.band.toUpperCase()}</div>
+              <div>{show.time.toUpperCase()}</div>
+            </div>
+          </li>
+        {/each}
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -64,6 +66,10 @@
     #calendar {
       max-width: 51em;
     }
+  }
+
+  .container {
+    text-align: left;
   }
 
   .show {
@@ -105,6 +111,20 @@
   @media (min-width: 880px) {
     .show {
       padding: 2em 0.5em;
+    }
+  }
+  @media (min-width: 600px) {
+    .show:nth-last-child(3) {
+      position: relative;
+    }
+    .show:nth-last-child(3)::after {
+      content: "";
+      position: absolute;
+      bottom: -0.14em;
+      left: 0;
+      width: 100%;
+      height: .14em;
+      background-color: #d6a929;
     }
   }
 

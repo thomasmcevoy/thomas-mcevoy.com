@@ -141,13 +141,6 @@ export default {
       url: '//mckittrickhotel.com',
       band: 'Manderley Bar House Band',
       time: '9:00–10:30 PM'
-    },
-    {
-      day: '',
-      venue: '',
-      url: '',
-      band: '',
-      time: ''
     }
   ]
 }
