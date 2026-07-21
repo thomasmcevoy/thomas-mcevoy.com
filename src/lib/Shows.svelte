@@ -8,14 +8,15 @@
   <h2>SHOWS</h2>
   <div id="calendar">
     <h4>{calendar.month} {calendar.year}</h4>
-    <div class="container">
+    <div class="container" class:has-orphan={needsUnderlineFix}>
       <ol>
         {#each calendar.shows as show, i}
           <li
             class="show"
             class:underline-fix={
               needsUnderlineFix &&
-              (i === calendar.shows.length - 3 || i === calendar.shows.length - 2)
+              (i === calendar.shows.length - 3 ||
+              i === calendar.shows.length - 2)
             }
           >
             <div class="day">
@@ -122,21 +123,42 @@
     }
   }
   @media (min-width: 600px) {
-  .show.underline-fix {
+    .show.underline-fix {
+      position: relative;
+    }
+
+    .show.underline-fix::after {
+      content: "";
+      position: absolute;
+      bottom: -0.14em;
+      left: 0;
+      width: 100%;
+      height: 0.14em;
+      background-color: #d6a929;
+    }
+  }
+  
+
+  .container.has-orphan {
     position: relative;
   }
 
-  .show.underline-fix::after {
+  .container.has-orphan::after {
     content: "";
     position: absolute;
-    bottom: -0.14em;
-    left: 0;
-    width: 100%;
-    height: 0.14em;
+    left: 32.875em;
+    bottom: 0;
+    width: 0.14em;
+    height: 15.375em;
     background-color: #d6a929;
   }
+@media (min-width: 600px) and (max-width: 879px) {
+  .container.has-orphan::after {
+    left: 22.175em;
+    height: 10.378em;
+    width: .12em;
+  }
 }
-
   .day {
     font: 100 7em/0.9 "Futura Light", "Futura Book", "Futura", "Futura Standard",
       "Trebuchet MS", sans-serif;
