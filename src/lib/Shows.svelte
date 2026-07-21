@@ -1,5 +1,7 @@
 <script>
   import calendar from "./calendar.js";
+
+  const needsUnderlineFix = calendar.shows.length % 3 === 1;
 </script>
 
 <section id="shows">
@@ -8,8 +10,14 @@
     <h4>{calendar.month} {calendar.year}</h4>
     <div class="container">
       <ol>
-        {#each calendar.shows as show}
-          <li class="show">
+        {#each calendar.shows as show, i}
+          <li
+            class="show"
+            class:underline-fix={
+              needsUnderlineFix &&
+              (i === calendar.shows.length - 3 || i === calendar.shows.length - 2)
+            }
+          >
             <div class="day">
               {show.day}
             </div>
@@ -114,19 +122,20 @@
     }
   }
   @media (min-width: 600px) {
-    .show:nth-last-child(3) {
-      position: relative;
-    }
-    .show:nth-last-child(3)::after {
-      content: "";
-      position: absolute;
-      bottom: -0.14em;
-      left: 0;
-      width: 100%;
-      height: .14em;
-      background-color: #d6a929;
-    }
+  .show.underline-fix {
+    position: relative;
   }
+
+  .show.underline-fix::after {
+    content: "";
+    position: absolute;
+    bottom: -0.14em;
+    left: 0;
+    width: 100%;
+    height: 0.14em;
+    background-color: #d6a929;
+  }
+}
 
   .day {
     font: 100 7em/0.9 "Futura Light", "Futura Book", "Futura", "Futura Standard",

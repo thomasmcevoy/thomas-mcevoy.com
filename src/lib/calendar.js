@@ -6,7 +6,7 @@ export default {
       day: 3,
       venue: 'Midnight Blue',
       url: '//midnightbluegramercy.com',
-      band: 'Tom McEvoy Trio',
+      band: 'Thomas McEvoy Trio',
       time: '7–8:30 PM'
     },
     {
