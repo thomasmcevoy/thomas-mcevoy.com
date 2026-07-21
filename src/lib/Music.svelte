@@ -1,5 +1,8 @@
 <script>
+  import { tick } from "svelte";
   import tracks from "./tracks.js";
+
+  let audio;
 
   export let albums = [...new Set(tracks.map((track) => track.album))];
   export let currentTrack = 0;
@@ -15,11 +18,19 @@
     return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
   }
 
-  export function play(track) {
+ export async function play(track) {
     if (pristine) pristine = false;
-    if (!paused) paused = true;
     if (track !== undefined) currentTrack = track;
-    setTimeout(() => (paused = false), 0);
+
+    await tick();
+    audio.play().catch((error) => {
+      console.error("Playback failed:", error);
+    });
+  }
+
+  export function pause() {
+    audio.pause();
+    paused = true;
   }
 
   export function previous() {
@@ -35,6 +46,7 @@
   <h2>MUSIC</h2>
   <div id="player" class:paused>
     <audio
+      bind:this={audio}
       bind:paused
       bind:duration
       bind:currentTime
@@ -96,7 +108,7 @@
         <button
           id="pause"
           class="controls__button controls__button--large"
-          on:click={() => (paused = !paused)}
+          on:click={() => pause()}
         >
           <svg viewBox="0 0 105.469 131.621">
             <path
