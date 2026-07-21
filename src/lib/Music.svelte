@@ -33,12 +33,18 @@
     paused = true;
   }
 
-  export function previous() {
-    if (!pristine) play(currentTrack === 0 ? 5 : currentTrack - 1);
+  export function next() {
+    if (!pristine) {
+      currentTrack = currentTrack === 5 ? 0 : currentTrack + 1;
+      if (!paused) play();
+    }
   }
 
-  export function next() {
-    if (!pristine) play(currentTrack === 5 ? 0 : currentTrack + 1);
+  export function previous() {
+    if (!pristine) {
+      currentTrack = currentTrack === 0 ? 5 : currentTrack - 1;
+      if (!paused) play();
+    }
   }
 </script>
 
